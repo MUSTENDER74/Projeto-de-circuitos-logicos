@@ -264,6 +264,8 @@ body {
     flex-direction: row;
     justify-content: center;
     gap: 2rem;
+    padding: 1rem 0;
+    margin-top: 1.8rem;
   }
 
   .botao_inicio, .botao_desenvolvedores, .botao_projeto { width: 180px; }
