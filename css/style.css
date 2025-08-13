@@ -5,8 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
+  --cor-cabeçalho:#181818;
   --cor-fundo: #000000;
-  --cor-primaria: #F6F6F6;
+  --cor-primaria: #ffffff;
   --cor-destaque: #F28C34;
   --cor-botao: #7FFFD4;
   --cor-dev-nome: #4B0082;
@@ -66,103 +67,46 @@ body {
 /* ==========================================================================
    3. CABEÇALHO (HEADER) 
    ========================================================================== */
+.cabeçalho__menu-hamburguer {
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
 
-.cabecalho {
+.cabeçalho {
+    background-color: var(--cor-cabeçalho);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--espaco-md) 5%;
-
-    /* CÓDIGO DA NAVEGAÇÃO FLUTUANTE */
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: var(--cor-fundo);
-}
-
-.cabecalho__container {
-    display: flex;
-    align-items: center;
-}
-
-.container__botao {
-    display: none;
-}
-
-.container__label {
-    cursor: pointer;
-    padding: 0.5rem; /* Aumenta a área de clique */
-}
-
-/* ÍCONE DO HAMBÚRGUER FEITO COM CSS PURO */
-.cabeçalho__menu-hamburguer {
-    width: 24px;
-    height: 2px;
-    background-color: var(--cor-primaria);
-    display: inline-block;
     position: relative;
+    border-bottom: 1px solid var(--cor-destaque);
 }
-.cabeçalho__menu-hamburguer::before,
-.cabeçalho__menu-hamburguer::after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    background-color: inherit;
-    position: absolute;
-    left: 0;
-    transition: all 0.3s;
+
+.container {
+    display: flex;
+     align-items: center;
 }
-.cabeçalho__menu-hamburguer::before { top: -8px; }
-.cabeçalho__menu-hamburguer::after { bottom: -8px; }
 
+.container__imagem {
+    padding: 1em;
+    width: 18%;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
-/* LISTA DE LINKS (MOBILE) */
-.links_inicio {
+.lista-menu {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--cor-fundo);
-    flex-direction: column;
-    align-items: center;
-    gap: var(--espaco-sm);
-    padding: var(--espaco-lg) 0;
-    border-top: 1px solid var(--cor-destaque);
+     position: absolute;
+     top: 100%
 }
 
-/* A MÁGICA: Mostra a lista quando o botão é checado */
-.container__botao:checked ~ .links_inicio {
-    display: flex;
+.container__botao:checked~.lista-menu {
+     display: block;
 }
 
-/* ESTILO DOS BOTÕES (VÁLIDO PARA MOBILE E DESKTOP) */
-.botao_inicio,
-.botao_desenvolvedores,
-.botao_armario,
-.botao_projeto {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    max-width: 300px;
-    padding: 0.5rem 0;
-    border-radius: 1rem;
-    color: var(--cor-botao);
-    text-decoration: none;
-    font-family: var(--fonte-titulo);
-    font-size: var(--tamanho-link);
-    font-weight: 600;
-    transition: transform 0.4s ease;
-}
-.botao_inicio:hover,
-.botao_desenvolvedores:hover,
-.botao_armario:hover,
-.botao_projeto:hover {
-    transform: scale(1.10);
-}
-/* ==========================================================================
+  /*======================================================
    4. CONTEÚDO PRINCIPAL (MAIN)
    ========================================================================== */
 
@@ -320,55 +264,8 @@ body {
    ========================================================================== */
 
 @media (min-width: 769px) {
-  .cabecalho__container {
-        display: none;
-    }
-
-  .links_inicio {
-  display: flex;
-  flex-direction: row;
-  position: static; /* Volta ao fluxo normal do documento */
-  width: auto; /* Largura automática */
-  flex-direction: column;
-  align-items: center;
-  padding: var(--espaco-lg) var(--espaco-lg);
-  flex-direction: row;
-  justify-content: center;
-  gap: 2rem;
-  padding: 1rem 0;
-  margin-top: 1.8rem;
-  border-top: none;
-}
-
-.botao_inicio,
-.botao_desenvolvedores,
-.botao_armario,
-.botao_projeto {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  max-width: 300px;
-  padding: 0.2rem 0;
-  border-radius: 1rem;
-  background-color: var(--cor-fundo);
-  color: var(--cor-botao);
-  text-decoration: none;
-  font-family: var(--fonte-titulo);
-  font-size: var(--tamanho-link);
-  font-weight: 60;
-  transition: transform 0.4s ease;
-}
-
-.botao_inicio:hover,
-.botao_desenvolvedores:hover,
-.botao_armario:hover,
-.botao_projeto:hover {
-  transform: scale(1.10);
-}
+  .container__imagem { width: 5%;}
   
-  .botao_inicio, .botao_desenvolvedores, .botao_projeto { width: 180px; }
-
   .conteudo_principal_wrapper { 
     flex-direction: row;
     margin-left: 0;
@@ -391,9 +288,6 @@ body {
     mask-image: linear-gradient(to left, black 20%, transparent 90%);
     -webkit-mask-image: linear-gradient(to left, black 20%, transparent 90%);
   }
-  
-  .links_inicio {gap:var(--espaco-ti); }
-
   .apresentacao__links { padding: 4rem 2rem; }
 
   .desenvolvedor-card { flex-direction: row; text-align: left; }
