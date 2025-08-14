@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --cor-cabeçalho:#181818;
+  --cor-cabeçalho:#090909;
   --cor-fundo: #000000;
   --cor-primaria: #ffffff;
   --cor-destaque: #F28C34;
@@ -68,11 +68,15 @@ body {
    3. CABEÇALHO (HEADER) 
    ========================================================================== */
 .cabeçalho__menu-hamburguer {
-    width: 24px;
-    height: 24px;
+    background-image: url('/assets/Menu\ Aberto.svg'); /* Adicione a imagem de fundo aqui */
+    background-size: contain; /* Garante que a imagem caiba no espaço */
+    padding: var(--espaco-xl); /* Define o espaço ao redor da imagem */
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; /* Centraliza a imagem */
     display: inline-block;
+    background-origin:border-box; 
+    margin-left:0.2em;
+    width: 100%;
 }
 
 .cabeçalho {
@@ -91,9 +95,7 @@ body {
 
 .container__imagem {
     padding: 1em;
-    width: 18%;
-    border-radius: 50%;
-    object-fit: cover;
+    width: 100%;
 }
 
 .lista-menu {
@@ -104,6 +106,25 @@ body {
 
 .container__botao:checked~.lista-menu {
      display: block;
+}
+
+.lista-menu__titulo, .lista-menu__item {
+  padding: 1rem;
+  font-family: var(--fonte-texto);
+  background-color: var(--cor-primaria);
+  color: var(--cor-fundo);
+}
+
+.lista-menu__titulo { 
+  color: var(--cor-destaque);
+}
+
+.container__botao {
+  opacity: 0; /* Torna o checkbox invisível */
+  position: absolute; /* Permite posicioná-lo sem afetar o layout */
+  width: 24px; /* Largura do ícone do menu */
+  height: 24px; /* Altura do ícone do menu */
+  z-index: 1; 
 }
 
   /*======================================================
@@ -264,7 +285,6 @@ body {
    ========================================================================== */
 
 @media (min-width: 769px) {
-  .container__imagem { width: 5%;}
   
   .conteudo_principal_wrapper { 
     flex-direction: row;
