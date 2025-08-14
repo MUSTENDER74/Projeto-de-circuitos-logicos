@@ -14,7 +14,7 @@
   --fonte-titulo: "Krona One", sans-serif;
   --fonte-texto: "Public Sans", sans-serif;
   --tamanho-texto: clamp(1rem, 4vw, 1.5rem);
-  --tamanho-link: clamp(0.2rem, 4vw, 1rem);
+  --tamanho-link: clamp(0.2rem, 4vw, 1.25rem);
   --tamanho-subtitulo: clamp(1.35rem, 4vw, 1.75rem);
   --espaco-sm: 0.5rem;
   --espaco-md: 1rem;
@@ -68,15 +68,21 @@ body {
    3. CABEÇALHO (HEADER) 
    ========================================================================== */
 .cabeçalho__menu-hamburguer {
-    background-image: url('/assets/Menu\ Aberto.svg'); /* Adicione a imagem de fundo aqui */
-    background-size: contain; /* Garante que a imagem caiba no espaço */
-    padding: var(--espaco-xl); /* Define o espaço ao redor da imagem */
+    background-image: url('/assets/Menu\ Aberto.svg'); 
+    background-size: contain;
+    padding: var(--espaco-xl); 
     background-repeat: no-repeat;
-    background-position: center; /* Centraliza a imagem */
+    background-position: center;
     display: inline-block;
     background-origin:border-box; 
-    margin-left:0.2em;
+    margin: 0.4rem;
     width: 100%;
+}
+
+.cabeçalho__menu-hamburguer:active {
+    background-color: var(--cor-destaque);
+     border-color: var(var(--cor-destaque));
+     transform: scale(0.98); 
 }
 
 .cabeçalho {
@@ -117,14 +123,59 @@ body {
 
 .lista-menu__titulo { 
   color: var(--cor-destaque);
+  font-size: var(--tamanho-link);
+  font-weight: 500;
 }
 
 .container__botao {
-  opacity: 0; /* Torna o checkbox invisível */
-  position: absolute; /* Permite posicioná-lo sem afetar o layout */
-  width: 24px; /* Largura do ícone do menu */
-  height: 24px; /* Altura do ícone do menu */
+  opacity: 0; 
+  position: absolute; 
+  width: 24px;
+  height: 24px; 
   z-index: 1; 
+}
+
+.form-pesquisa {
+    display: flex;
+    align-items: center;
+    background-color: var(--cor-fundo); 
+    border: 1px solid var(--cor-destaque); 
+    border-radius: 20px; 
+    overflow: hidden;
+    width: 100%;
+    transition: all 0.3s ease;
+    margin-left: 2rem;
+}
+
+.input-pesquisa {
+    border: none;
+    background: transparent;
+    flex-grow: 1; 
+    padding: 0.75em 1em; 
+    font-family: var(--fonte-texto);
+    font-size: 0.9rem;
+    color: var(--cor-primaria);
+}
+
+.input-pesquisa:focus {
+    outline: none;
+}
+
+/* O botão de busca */
+.botao-pesquisa {
+    border: none;
+    background: var(--cor-cabeçalho);
+    padding: 0 1em;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--cor-destaque); 
+}
+
+
+.form-pesquisa:focus-within {
+    border-color: var(--cor-destaque);
+    box-shadow: 0 0 5px rgba(var(--cor-destaque-rgb), 0.5); 
+   
 }
 
   /*======================================================
@@ -279,12 +330,16 @@ body {
   margin-top: 6rem;
 }
 
-
 /* ==========================================================================
    7. MEDIA QUERIES 
    ========================================================================== */
 
 @media (min-width: 769px) {
+  /* CABEÇALHO (HEADER) */
+.form-pesquisa {
+    margin-left: 12rem;
+}
+/*4. CONTEÚDO PRINCIPAL (MAIN)*/
   
   .conteudo_principal_wrapper { 
     flex-direction: row;
@@ -304,17 +359,20 @@ body {
     background-size: auto 100%;
     background-position: right left; 
     padding-right: 10px;
-    /* DIREÇÃO DA MÁSCARA de imagem */
     mask-image: linear-gradient(to left, black 20%, transparent 90%);
     -webkit-mask-image: linear-gradient(to left, black 20%, transparent 90%);
   }
   .apresentacao__links { padding: 4rem 2rem; }
 
+   .rodape { margin-top: 12rem; }
+
+  /* PARTE EXCLUSIVA DO ARQUIVO Desenvolvedores_index.html*/
+
   .desenvolvedor-card { flex-direction: row; text-align: left; }
 
   .imagem-desenvolvedor { width: 300px; height: 300px; }
 
-  .rodape { margin-top: 12rem; }
+  /*PARTE EXCLUSIVA DO ARQUIVO Sobre_projeto.html*/
 
   .Projeto_conteudo {
     width: 100%;
@@ -342,7 +400,6 @@ body {
     gap: var(--espaco-lg);
   }
 
-  
   .apresentacao__links {
     flex-direction: row;
     justify-content: center;
