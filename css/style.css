@@ -68,7 +68,7 @@ body {
    3. CABEÇALHO (HEADER) 
    ========================================================================== */
 .cabeçalho__menu-hamburguer {
-    background-image: url('/assets/Menu\ Aberto.svg'); 
+    background-image: url("/assets/Menu-aberto.svg"); 
     background-size: contain;
     padding: var(--espaco-xl); 
     background-repeat: no-repeat;
