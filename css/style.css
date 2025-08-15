@@ -67,25 +67,6 @@ body {
 /* ==========================================================================
    3. CABEÇALHO (HEADER) 
    ========================================================================== */
-.cabeçalho__menu-hamburguer {
-   /* Correção com caminho relativo */
-    background-image: url("../assets/Menu-aberto.svg");
-    background-size: contain;
-    padding: var(--espaco-xl); 
-    background-repeat: no-repeat;
-    background-position: center;
-    display: inline-block;
-    background-origin:border-box; 
-    margin: 0.4rem;
-    width: 100%;
-}
-
-.cabeçalho__menu-hamburguer:active {
-    background-color: var(--cor-destaque);
-     border-color: var(var(--cor-destaque));
-     transform: scale(0.98); 
-}
-
 .cabeçalho {
     background-color: var(--cor-cabeçalho);
     display: flex;
@@ -93,6 +74,27 @@ body {
     align-items: center;
     position: relative;
     border-bottom: 1px solid var(--cor-destaque);
+}
+
+.cabeçalho__menu-hamburguer,
+.cabeçalho__menu__config {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    padding: 0; /* Remove o padding antigo */
+    margin: 1rem;  /* Remove a margem antiga */
+}
+
+.cabeçalho__menu-hamburguer {
+    background-image: url("../assets/Menu-aberto.svg");
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+}
+
+.cabeçalho__menu-hamburguer:hover {
+    transform: scale(1.10);
 }
 
 .container {
@@ -136,6 +138,8 @@ body {
   z-index: 1; 
 }
 
+/* pesquisa do usario*/
+
 .form-pesquisa {
     display: flex;
     align-items: center;
@@ -146,6 +150,7 @@ body {
     width: 100%;
     transition: all 0.3s ease;
     margin-left: 2rem;
+    margin-right: 1rem;
 }
 
 .input-pesquisa {
@@ -162,7 +167,6 @@ body {
     outline: none;
 }
 
-/* O botão de busca */
 .botao-pesquisa {
     border: none;
     background: var(--cor-cabeçalho);
@@ -177,6 +181,52 @@ body {
     border-color: var(--cor-destaque);
     box-shadow: 0 0 5px rgba(var(--cor-destaque-rgb), 0.5); 
    
+}
+
+/*configuraçoes do usuario*/
+
+/* Estilo específico para as configurações */
+.cabeçalho__menu__config {
+    background-image: url("../assets/config.jpg");
+    background-size: cover;
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.cabeçalho__menu__config:hover {
+  transform: scale(1.10);
+}
+
+.container__botao__config {
+    opacity: 0; 
+    position: absolute; 
+    width: 24px;
+    height: 24px; 
+    z-index: 1; 
+}
+
+.container__botao__config:checked ~ .lista-menu-config {
+    display: block;
+}
+
+.lista-menu-config {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0; /* Alinha na borda direita */
+    z-index: 10;
+    
+    padding: 1rem;
+    font-family: var(--fonte-texto);
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+}
+
+.lista-menu__titulo__config {
+    color: var(--cor-destaque);
+    font-size: var(--tamanho-link);
+    font-weight: 500;
 }
 
   /*======================================================
@@ -336,10 +386,15 @@ body {
    ========================================================================== */
 
 @media (min-width: 769px) {
-  /* CABEÇALHO (HEADER) */
+/* ==========================================================================
+   3. CABEÇALHO (HEADER) 
+   ========================================================================== */
+/* pesquisa do usario*/
 .form-pesquisa {
     margin-left: 12rem;
+    margin-right: 40rem;
 }
+
 /*4. CONTEÚDO PRINCIPAL (MAIN)*/
   
   .conteudo_principal_wrapper { 
