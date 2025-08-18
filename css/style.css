@@ -16,6 +16,7 @@
   --tamanho-texto: clamp(1rem, 4vw, 1.5rem);
   --tamanho-link: clamp(0.2rem, 4vw, 1.25rem);
   --tamanho-subtitulo: clamp(1.35rem, 4vw, 1.75rem);
+  --tamnho-titulo:clamp(1.75rem, 4vw, 2.20rem)
   --espaco-sm: 0.5rem;
   --espaco-md: 1rem;
   --espaco-lg: 1.5rem;
@@ -31,21 +32,32 @@ body {
   min-height: 100vh;
 }
 
+.Body_config {
+  background-color: var(--cor-cabeçalho);
+  color: var(--cor-primaria);
+  min-height: 100vh;
+}
+
 /* ==========================================================================
    2. PADRONIZAÇÃO DE TÍTULOS
    ========================================================================== */
 
 .teste_conteudo__conteudo__titulo,
 .Projeto_titulo,
-.titulo_desenvolvedores {
+.titulo_desenvolvedores,
+.Configurações_titulo {
   font-family: var(--fonte-titulo);
   font-weight: 400;
   line-height: 1.3;
-  font-size: 2.20rem;
+  font-size: 1.7rem;
   color: var(--cor-destaque);
   text-align: center;
-  padding: var(--espaco-ti);
+  padding: var(--espaco-xl);
   margin-bottom: var(--espaco-xl);
+}
+
+.Configurações_titulo {
+  text-align: left;
 }
 
 .nome-desenvolvedor {
@@ -204,7 +216,6 @@ body {
     position: absolute; 
     width: 24px;
     height: 24px; 
-    z-index: 1; 
 }
 
 .container__botao__config:checked ~ .lista-menu-config {
@@ -212,22 +223,54 @@ body {
 }
 
 .lista-menu-config {
+    text-align: left;
     display: none;
     position: absolute;
     top: 100%;
     right: 0; /* Alinha na borda direita */
     z-index: 10;
-    
     padding: 1rem;
     font-family: var(--fonte-texto);
     background-color: var(--cor-primaria);
     color: var(--cor-fundo);
+    list-style-type: none;
 }
 
 .lista-menu__titulo__config {
     color: var(--cor-destaque);
     font-size: var(--tamanho-link);
-    font-weight: 500;
+    font-weight: 600;
+    list-style-type: none;
+    text-align: center;
+}
+
+  /*======================================================
+   Parte exclusiva Config.html
+   ========================================================================== */
+.cabeçalho_config {
+    background-color: var(--cor-cabeçalho);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid var(--cor-destaque);
+}
+
+.Botao_setinha {
+  display: block; /* Ou 'inline-block'. Isso permite que a tag <a> tenha altura e largura. */
+  background-image: url("../assets/setinha.jpg"); 
+  width: 24px;
+  height: 24px;
+  background-size: contain;   /* Apenas um é necessário */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  background-position: center;  /* Centraliza a imagem no elemento */
+  border-radius: 50%;
+  padding: 1.5rem;
+  margin: 1rem;
+}
+
+.Botao_setinha:hover {
+  transform: scale(1.10);
 }
 
   /*======================================================
@@ -330,6 +373,15 @@ body {
     font-size: var(--tamanho-texto);
   }
 
+  /* ===========================================================
+   PARTE EXCLUSIVA DO ARQUIVO config.html
+   =============================================================*/
+.Configurações {
+  background-color: var(--cor-cabeçalho);
+  width: 100%;
+}
+    
+
 /* ==========================================================================
    5. SEÇÃO DE LINKS (REDES SOCIAIS) 
    ========================================================================== */
@@ -382,13 +434,33 @@ body {
   margin-top: 6rem;
 }
 
+.rodape_config {
+   padding: var(--espaco-lg);
+  background-color: var(--cor-cabeçalho);
+  text-align: center;
+  font-family: var(--fonte-texto);
+  margin-top: 6rem;
+}
+
 /* ==========================================================================
    7. MEDIA QUERIES 
    ========================================================================== */
 
 @media (min-width: 769px) {
+
+  /* ==========================================================================
+  Titulos
+   ========================================================================== */
+
+.teste_conteudo__conteudo__titulo,
+.Projeto_titulo,
+.titulo_desenvolvedores,
+.Configurações_titulo {
+  font-size: 2.20rem;
+}
+
 /* ==========================================================================
-   3. CABEÇALHO (HEADER) 
+   . CABEÇALHO (HEADER) 
    ========================================================================== */
 /* pesquisa do usario*/
 .form-pesquisa {
@@ -408,7 +480,7 @@ body {
     margin-right: 3rem;
 }
 
-/*4. CONTEÚDO PRINCIPAL (MAIN)*/
+/*. CONTEÚDO PRINCIPAL (MAIN)*/
   
   .conteudo_principal_wrapper { 
     flex-direction: row;
