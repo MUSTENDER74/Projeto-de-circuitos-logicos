@@ -57,13 +57,14 @@ body {
 }
 
 .Configurações_titulo {
-  text-align: left;
+  margin: 0rem;
+  padding: 0rem;
 }
 
 .nome-desenvolvedor {
   font-family: var(--fonte-titulo);
   font-weight: 400;
-  font-size: 2rem;
+  font-size: var(--tamanho-subtitulo);
   color: var(--cor-dev-nome);
   margin: 0;
 }
@@ -250,10 +251,10 @@ body {
 .cabeçalho_config {
     background-color: var(--cor-cabeçalho);
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
     position: relative;
-    border-bottom: 1px solid var(--cor-destaque);
+    border-bottom: 1px solid var(--cor-cabeçalho);
 }
 
 .Botao_setinha {
@@ -318,32 +319,92 @@ body {
 /* ===========================================================
    PARTE EXCLUSIVA DO ARQUIVO Desenvolvedores_index.html
    =============================================================*/
-
-.lista-desenvolvedores {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
+.slider {
+  width: 95vw; 
+  height: 55vh; 
+  margin: 1rem auto; 
+  height: 75vh;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-.desenvolvedores_paragrafo {
-  font-family: var(--fonte-texto);
-  font-size: var(--tamanho-texto);
+.slides {
+  width: 300%;
+  height: 100%; 
+  display: flex;
+  transition: margin-left 0.6s ease-in-out;
 }
 
-.desenvolvedor-card {
+.slides input {
+  display: none;
+}
+
+.slide {
+  width: 33.333%;
+  height: 100%; 
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 16px;
-  text-align: center;
+  gap: 0.5rem; 
 }
 
-.imagem-desenvolvedor {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+.slide-img {
+  width: 300px;
+  height: 300px;
   object-fit: cover;
+  border: 4px solid var(--cor-cabeçalho);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* Sombra na imagem */
+}
+
+.manual-navigation, .navigation-auto {
+  position: absolute;
+  width: 100%;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  z-index: 10; /* Garante que fique na frente de tudo */
+}
+
+.manual-btn {
+  border: 2px solid white;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.manual-btn:not(:last-child) {
+  margin-right: 30px;
+}
+
+.manual-btn:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.navigation-auto div {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.navigation-auto div:not(:last-child) {
+    margin-right: 30px;
+}
+
+/* Regras de destaque e movimento */
+#radio1:checked ~ .first { margin-left: 0; }
+#radio2:checked ~ .first { margin-left: -33.333%; }
+#radio3:checked ~ .first { margin-left: -66.666%; }
+
+#radio1:checked ~ .navigation-auto .auto-btn1,
+#radio2:checked ~ .navigation-auto .auto-btn2,
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+    background-color: white;
 }
 
 /* ===========================================================
@@ -525,6 +586,21 @@ body {
     margin-top: var(--espaco-xl);
     margin-left: var(--espaco-xl);
   }
+/* PARTE EXCLUSIVA DE DESENVOLVEDORES*/
+.slider {
+  margin: 2rem auto;
+  width: 90vw;
+  max-width: 1200px;
+}
+
+.slide {
+  gap: 1.5rem;
+}
+
+.slide-img {
+  width: 40%;
+  height: 100%;
+}
 
 }
 

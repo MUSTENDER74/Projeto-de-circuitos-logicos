@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu primeiro site</title>
     <link rel="stylesheet" href="./css/style.css">  
+    
 </head>
 <body>
     <header class="cabeçalho">
@@ -55,42 +56,46 @@
           </ul>
     </div>
 
-</header>>
-
-
-
-   <main class="apresentacao_desenvolvedores">
+</header>
+<main>
     <h1 class="titulo_desenvolvedores">
         <strong>Desenvolvedores do projeto</strong>
     </h1>
     
-    <div class="lista-desenvolvedores">
-
-        <div class="desenvolvedor-card">
-            <img class="imagem-desenvolvedor" src="./assets/Foto-Igor.png" alt="Foto do Igor Brandon Hasler">
-            <div class="texto-desenvolvedor">
+    <div class="slider">
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1"> 
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            
+            <div class="slide first">
                 <h3 class="nome-desenvolvedor">Igor Brandon Hasler</h3>
-                <p class="desenvolvedores_paragrafo">Isto é um parágrafo</p>
-                </div>
-        </div>
+                <img class="slide-img" src="./assets/Foto-Igor.png" alt="Foto do Igor Brandon Hasler"> 
+            </div>
 
-        <div class="desenvolvedor-card">
-            <img class="imagem-desenvolvedor" src="./assets/Foto-Gustavo.png" alt="Foto do Gustavo Santana Marcolino">
-            <div class="texto-desenvolvedor">
+            <div class="slide">
                 <h3 class="nome-desenvolvedor">Gustavo Santana Marcolino</h3>
-                <p class="desenvolvedores_paragrafo">Isto é um parágrafo</p>
+                <img class="slide-img" src="./assets/Foto-Gustavo.png" alt="Foto do Gustavo Santana Marcolino">
             </div>
-        </div>
 
-        <div class="desenvolvedor-card">
-            <img class="imagem-desenvolvedor" src="./assets/Foto-Murilo.png" alt="Foto do Murilo Gracias Stender">
-            <div class="texto-desenvolvedor">
+            <div class="slide">
                 <h3 class="nome-desenvolvedor">Murilo Gracias Stender</h3>
-                <p class="desenvolvedores_paragrafo">Isto é um parágrafo</p>
+                <img class="slide-img" src="./assets/Foto-Murilo.png" alt="Foto do Murilo Gracias Stender">
             </div>
+            
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+            </div>    
         </div>
 
-    </div> 
+        <div class="manual-navigation">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+        </div>
+    </div>
 </main>
 
      <footer class="rodape">
@@ -105,6 +110,7 @@
         </a>
       </div>
     </footer>
+ <script src="./js/slider.js"></script>
 </body>
 </html>
 
