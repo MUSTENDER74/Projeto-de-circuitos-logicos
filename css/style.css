@@ -321,9 +321,8 @@ body {
    =============================================================*/
 .slider {
   width: 95vw; 
-  height: 55vh; 
-  margin: 1rem auto; 
-  height: 75vh;
+  height: 56vh; 
+  margin-top: 0rem;
   overflow: hidden;
   position: relative;
   border-radius: 10px;
@@ -588,9 +587,9 @@ body {
   }
 /* PARTE EXCLUSIVA DE DESENVOLVEDORES*/
 .slider {
+  height: 86vh;
   margin: 2rem auto;
-  width: 90vw;
-  max-width: 1200px;
+  width: 94vw;
 }
 
 .slide {
