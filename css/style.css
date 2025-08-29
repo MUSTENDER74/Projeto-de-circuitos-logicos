@@ -445,6 +445,52 @@ body {
 /* ==========================================================================
    5. SEÇÃO DE LINKS (REDES SOCIAIS) 
    ========================================================================== */
+  .redes-card {
+    display: flex;
+    flex-direction:column-reverse;
+    gap: 1rem;
+  }
+
+   .imagem-rede {
+    width: 80px;
+    height: 80px;
+    margin-right: 2px;
+    object-fit: cover;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+  .texto-rede {
+    text-align: center;
+    padding-top: 10rem;
+  }
+
+  .nome-rede {
+    color: var(--cor-dev-nome);
+    font-family: var(--fonte-titulo);
+    font-size: var(--tamanho-subtitulo);
+  }
+
+/* ==========================================================================
+   6. RODAPÉ (FOOTER)
+   ========================================================================== */
+
+.rodape {
+  padding: var(--espaco-lg);
+  color: var(--cor-primaria);
+  background-color: var(--cor-fundo);
+  text-align: center;
+  font-family: var(--fonte-texto);
+  margin-top: 6rem;
+}
+
+.rodape_config {
+   padding: var(--espaco-lg);
+  background-color: var(--cor-cabeçalho);
+  text-align: center;
+  font-family: var(--fonte-texto);
+  margin-top: 6rem;
+}
 
 .apresentacao__links {
   display: flex;
@@ -472,35 +518,6 @@ body {
 }
 
 .apresentacao__links__link:hover { transform: scale(1.08); }
-
-/* ESTILO ADICIONAL PARA OS LOGOS DO RODAPÉ */
-.apresentacao__links__img {
-    width: 30px;
-    height: 24px;
-    margin-right: 8px;
-    gap: var(--espaco-ti);
-}
-
-/* ==========================================================================
-   6. RODAPÉ (FOOTER)
-   ========================================================================== */
-
-.rodape {
-  padding: var(--espaco-lg);
-  color: var(--cor-primaria);
-  background-color: var(--cor-fundo);
-  text-align: center;
-  font-family: var(--fonte-texto);
-  margin-top: 6rem;
-}
-
-.rodape_config {
-   padding: var(--espaco-lg);
-  background-color: var(--cor-cabeçalho);
-  text-align: center;
-  font-family: var(--fonte-texto);
-  margin-top: 6rem;
-}
 
 /* ==========================================================================
    7. MEDIA QUERIES 
@@ -602,6 +619,25 @@ body {
 }
 
 }
+
+/*Parde da area de links*/
+  .redes-card { gap: 0;}
+
+  .imagem-rede {
+    width: 400px;
+    height: 400px;
+    margin-right: 8px;
+    border: 50px ;
+    gap: 2rem;
+    padding: 2rem;
+}
+  .imagem-rede:hover {
+    transform: scale(1.10);
+}
+
+  .texto-rede {
+    padding-top: 2rem;
+  }
 
 @media (min-width: 1024px) {
   .teste_conteudo { padding: 0 5% }
