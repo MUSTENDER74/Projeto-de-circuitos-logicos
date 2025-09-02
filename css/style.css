@@ -164,7 +164,7 @@ body {
     transition: all 0.3s ease;
     margin-left: 2rem;
     margin-right: 1rem;
-    padding: 0.3rem;
+    padding: 0.5rem;
 }
 
 .input-pesquisa {
@@ -173,7 +173,7 @@ body {
     flex-grow: 1; 
     padding: 0.75em 1em; 
     font-family: var(--fonte-texto);
-    font-size: 0.5rem;
+    font-size: 0.6rem;
     color: var(--cor-primaria);
 }
 
@@ -184,7 +184,8 @@ body {
 .botao-pesquisa {
     border: none;
     background: var(--cor-fundo);
-    padding: 0 1rem;
+    padding: 0;
+    padding-right: 5%;
     cursor: pointer;
     font-size: 1.1rem;
     color: var(--cor-destaque); 

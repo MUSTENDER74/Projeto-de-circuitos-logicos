@@ -24,7 +24,7 @@ const termosDeBusca = {
         'desenvolvedores', 'devs', 'quem fez', 'criadores', 'time',
         'equipe', 'créditos', 'autores', 'programadores', 'quem desenvolveu', 'equipe de desenvolvimento',
         'o time', 'membros', 'realizadores', 'nossa equipe', 'falar com os devs', 'contatar a equipe',
-        'engenheiros de software', 'os responsáveis', 'ficha técnica','quem fez'
+        'engenheiros de software', 'os responsáveis', 'ficha técnica','quem fez','responsáveis','responsaveis'
     ],
     'config.html': [
         'configurações', 'configuracoes', 'config', 'perfil', 'ajustes', 'opções',
