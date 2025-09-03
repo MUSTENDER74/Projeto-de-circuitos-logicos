@@ -30,13 +30,13 @@
 
 body {
  background-color: var(--cor-fundo);
- color: var(--cor-texto-principal); /* Alterado de --cor-primaria */
+ color: var(--cor-texto-principal); 
  min-height: 100vh;
 }
 
 .Body_config {
- background-color: var(--cor-cabecalho); /* Alterado */
- color: var(--cor-texto-principal); /* Alterado de --cor-primaria */
+ background-color: var(--cor-cabecalho); 
+ color: var(--cor-texto-principal); 
  min-height: 100vh;
 }
 
@@ -67,7 +67,7 @@ body {
  font-family: var(--fonte-titulo);
  font-weight: 400;
  font-size: var(--tamanho-subtitulo);
- color: var(--cor-texto-principal); /* Alterado de --cor-dev-nome */
+ color: var(--cor-texto-principal); 
  margin: 0rem;
  margin-top: 2.8rem;
 }
@@ -76,7 +76,7 @@ body {
  font-family: var(--fonte-titulo);
  font-weight: 400;
  font-size: clamp(1.25rem, 5vw, 1.5rem);
- color: var(--cor-texto-principal); /* Alterado de --cor-primaria */
+ color: var(--cor-texto-principal); 
  text-align: center;
 }
 
@@ -84,7 +84,7 @@ body {
  3. CABEÇALHO (HEADER) 
  ========================================================================== */
 .cabeçalho {
-  background-color: var(--cor-cabecalho); /* Alterado */
+  background-color: var(--cor-cabecalho); 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -358,6 +358,15 @@ body {
  PARTE EXCLUSIVA DO ARQUIVO Sobre_projeto.html
  =============================================================*/
 
+ .Projeto {
+
+ }
+
+.Projeto_wrapper {
+
+}
+
+
  .Projeto_conteudo {
   width: 100%;
   display: flex;
@@ -379,6 +388,18 @@ body {
  .Projeto_conteudo_paragrafo {
   font-family: var(--fonte-texto);
   font-size: var(--tamanho-texto);
+ }
+
+ .Projeto_video {
+  justify-content: center;
+  width: 80%;
+  margin-top: 3rem;
+  margin-left: 10%;
+  border: 0.2rem solid #000000; 
+ }
+
+ .Projeto_conteudo_subtitulo {
+
  }
 
  /* ===========================================================
