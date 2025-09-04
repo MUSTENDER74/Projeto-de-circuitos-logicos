@@ -358,22 +358,12 @@ body {
  PARTE EXCLUSIVA DO ARQUIVO Sobre_projeto.html
  =============================================================*/
 
- .Projeto {
-
- }
-
-.Projeto_wrapper {
-
-}
-
-
  .Projeto_conteudo {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
-  gap: 2.5rem;
+  gap: 2.2rem;
   margin-top: var(--espaco-xl);
  }
 
@@ -381,60 +371,63 @@ body {
   font-family: var(--fonte-titulo);
   font-weight: 400;
   font-size: var(--tamanho-subtitulo);
-  color: var(--cor-texto-principal); /* Alterado de --cor-dev-nome */
+  color: var(--cor-texto-principal); 
   margin: 1rem;
+  margin-left: 4%;
+ }
+
+ .Projeto_conteudo_paragrafo,
+ .Projeto_paragrafo_video {
+  font-family: var(--fonte-texto);
+  font-size: var(--tamanho-texto);
+  margin-bottom: 2rem;
+  margin-top: 0.2rem;
  }
 
  .Projeto_conteudo_paragrafo {
+  margin-left:6%;
+  margin-right:6%;
+ }
+
+ .Video-section {
+  display: flex ;
+  flex-direction: column;
+  margin: 5%;
+ }
+
+ .Projeto_conteudo_video {
   font-family: var(--fonte-texto);
-  font-size: var(--tamanho-texto);
+  font-size: var(--tamanho-subtitulo);
+  margin-left: 15%;
+  margin-top: 1rem;
+  margin-bottom: 0%;
+  justify-content: center;
+ }
+
+  .container-video {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4%;
  }
 
  .Projeto_video {
   justify-content: center;
-  width: 60%;
-  margin-top: 3rem;
-  margin-left: 18%;
+  width: 100%;
+  margin-top: 1rem;
+  margin-left: 0%;
   border: 0.2rem solid #000000; 
  }
 
- .Projeto_conteudo_subtitulo {
+ .Projeto_video:hover {
+    transform: scale(1.10);
+  }
 
- }
-
- /* ===========================================================
- PARTE EXCLUSIVA DO ARQUIVO config.html
- =============================================================*/
-.Configurações {
- background-color: var(--cor-cabecalho); /* Alterado */
- width: 100%;
-}
-  
-/* ==========================================================================
- 5. SEÇÃO DE LINKS (REDES SOCIAIS) 
- ========================================================================== */
- .redes-card {
-  display: flex;
-  flex-direction:column-reverse;
- }
-
- .imagem-rede {
-  width: 80px;
-  height: 80px;
-  margin-right: 2px;
-  object-fit: cover;
-  padding: 1rem;
-}
-
- .texto-rede {
-  text-align: center;
-  padding-top: 10rem;
- }
-
- .nome-rede {
-  color: var(--cor-texto-principal); /* Alterado de --cor-dev-nome */
-  font-family: var(--fonte-titulo);
-  font-size: var(--tamanho-subtitulo);
+  .Projeto_paragrafo_video {
+    width: 100%;
+    margin: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 5%;
+    justify-content: center;
  }
 
 /* ==========================================================================
@@ -443,7 +436,7 @@ body {
 
 .rodape {
  padding: var(--espaco-lg);
- color: var(--cor-texto-principal); /* Alterado */
+ color: var(--cor-texto-principal); 
  background-color: var(--cor-fundo);
  text-align: center;
  font-family: var(--fonte-texto);
@@ -452,7 +445,7 @@ body {
 
 .rodape_config {
  padding: var(--espaco-lg);
- background-color: var(--cor-cabecalho); /* Alterado */
+ background-color: var(--cor-cabecalho); 
  text-align: center;
  font-family: var(--fonte-texto);
  margin-top: 6rem;
@@ -551,25 +544,39 @@ body {
 
  .rodape { margin-top: 12rem; }
 
- /* PARTE EXCLUSIVA DO ARQUIVO Desenvolvedores_index.html*/
+ /*PARTE EXCLUSIVA DO ARQUIVO Sobre_projeto.html*/
+
+.container-video {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 4%;
+ }
+
+ .Projeto_video {
+  justify-content: center;
+  width: 65%;
+  margin-top: 3rem;
+  margin-left: 5%;
+  border: 0.2rem solid #000000; 
+ }
+
+  .Projeto_paragrafo_video {
+    width: 50%;
+    margin: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 5%;
+    justify-content: center;
+ }
+
+  .Projeto_conteudo_video {
+  margin-left: 22%;
+ }
+/* PARTE EXCLUSIVA DE DESENVOLVEDORES*/
 
  .desenvolvedor-card { flex-direction: row; text-align: left; }
 
  .imagem-desenvolvedor { width: 300px; height: 300px; }
 
- /*PARTE EXCLUSIVA DO ARQUIVO Sobre_projeto.html*/
-
- .Projeto_conteudo {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: space-between;
-  gap: 1.5rem;
-  margin-top: var(--espaco-xl);
-  margin-left: var(--espaco-xl);
- }
-/* PARTE EXCLUSIVA DE DESENVOLVEDORES*/
 .slider {
  height: 86vh;
  margin: 2rem auto;
