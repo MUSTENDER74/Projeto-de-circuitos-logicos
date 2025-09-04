@@ -16,8 +16,8 @@
 
   --tamanho-texto: clamp(1rem, 4vw, 1.5rem);
   --tamanho-link: clamp(0.2rem, 4vw, 1.25rem);
-  --tamanho-subtitulo: clamp(1.35rem, 4vw, 1.75rem);
-  --tamnho-titulo:clamp(1.75rem, 4vw, 2.20rem);
+  --tamanho-subtitulo: clamp(1.40rem, 4vw, 1.92rem);
+  --tamnho-titulo:clamp(1.80rem, 4vw, 2.30rem);
   
   --espaco-sm: 0.5rem;
   --espaco-md: 1rem;
@@ -274,6 +274,7 @@ body {
  justify-content: center;
  align-items: center;
  gap: 0.5rem; 
+ margin-top: 1rem;
 }
 
 .slides input {
@@ -367,9 +368,11 @@ body {
   margin-top: var(--espaco-xl);
  }
 
- .Projeto_conteudo_subtitulo {
+ .Projeto_conteudo_subtitulo,
+ .Explicação_projeto_titulo,
+ .ODS_titulo  {
   font-family: var(--fonte-titulo);
-  font-weight: 400;
+  font-weight: 100;
   font-size: var(--tamanho-subtitulo);
   color: var(--cor-texto-principal); 
   margin: 1rem;
@@ -377,14 +380,18 @@ body {
  }
 
  .Projeto_conteudo_paragrafo,
- .Projeto_paragrafo_video {
+ .Projeto_paragrafo_video,
+ .Projeto_explicação_conteudo,
+ .ODS_conteudo_paragrafo {
   font-family: var(--fonte-texto);
   font-size: var(--tamanho-texto);
-  margin-bottom: 2rem;
-  margin-top: 0.2rem;
+  margin-bottom: 4%;
+  margin-top: 0.4rem;
  }
 
- .Projeto_conteudo_paragrafo {
+ .Projeto_conteudo_paragrafo,
+ .Projeto_explicação_conteudo,
+ .ODS_conteudo_paragrafo {
   margin-left:6%;
   margin-right:6%;
  }
@@ -429,6 +436,32 @@ body {
     margin-bottom: 2rem;
     margin-top: 5%;
     justify-content: center;
+ }
+
+ .Explicação_projeto {
+    gap: 2rem;
+ }
+ 
+  .Projeto_explicação_conteudo {
+    margin-top: 4%;
+  }
+ 
+ .ODS {
+  gap: 2rem;
+ }
+
+ .ODS_titulo {
+  margin-bottom: 4%;
+ }
+  
+ .Imagem_ODS,
+ .Imagem_ODS9  {
+  width:85%;
+  border: 0.2rem solid #000000;
+  margin-left:6%;
+  margin-right:6%;
+  margin-top: 4%;
+  margin-bottom:4% ;
  }
 
 /* ==========================================================================
@@ -595,24 +628,6 @@ body {
 
 }
 
-/*Parde da area de links*/
- .redes-card { gap: 0;}
-
- .imagem-rede {
-  width: 400px;
-  height: 400px;
-  margin-right: 8px;
-  border: 50px ;
-  gap: 2rem;
-  padding: 2rem;
-}
- .imagem-rede:hover {
-  transform: scale(1.10);
-}
-
- .texto-rede {
-  padding-top: 2rem;
- }
 
 @media (min-width: 1024px) {
  .teste_conteudo { padding: 0 5% }
