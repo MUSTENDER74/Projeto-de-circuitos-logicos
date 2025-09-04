@@ -398,7 +398,8 @@ body {
  .Projeto_conteudo_video {
   font-family: var(--fonte-texto);
   font-size: var(--tamanho-subtitulo);
-  margin-left: 15%;
+  margin: 1rem;
+  margin-left: 0%;
   margin-top: 1rem;
   margin-bottom: 0%;
   justify-content: center;
