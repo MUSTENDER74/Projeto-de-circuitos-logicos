@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/style.css"> 
 </head>
 <body>
-    <header class="cabeçalho">
+     <header class="cabeçalho">
 
     <div class="container" title="Menu de Navegação">
         <input type="checkbox" id="menu" class="container__botao"/>
@@ -21,6 +21,11 @@
             </li>
             <li class="lista-menu__item">
                 <a href="sobre-projeto.html" class="botao_projeto"> Projeto </a>
+            </li>
+             <li class="lista-menu__item">
+                <a href="Criaçao.html" class="botao_desenvolvedores">
+                    Criação do projeto 
+                </a>
             </li>
             <li class="lista-menu__item">
                 <a href="desenvolvedores.html" class="botao_desenvolvedores">
@@ -41,61 +46,52 @@
 
     <main class="Projeto">
         <div class="Projeto_wrapper">
-            <h1 class="Projeto_titulo">
-                <strong><b class="negrito1"> Sobre o Projeto </b></strong>
-            </h1>
-            <section class="Projeto_conteudo">
-                <h2 class="Projeto_conteudo_subtitulo">Motivações para o Projeto</h2>
-                <p class="Projeto_conteudo_paragrafo"> A motivação para este projeto partiu da iniciativa dos integrantes 
-                    <b class="negrito1">Gustavo Santana Marcolino</b> e <b class="negrito1">Igor Brandon Hasler</b>. 
-                    A proposta foi desenvolver uma impressora 2D/3D, aproveitando a experiência que a equipe adquiriu em projetos 
-                    anteriores com fundamentos parecidos. Sendo assim, o trabalho apresentado é a evolução de uma impressora 2D caseira, 
-                    desenvolvida previamente pela equipe, cujo funcionamento é demonstrado no vídeo a seguir.
-                
-                </p>
-            </section>
+         <h1 class="Projeto_titulo titulo-animado" data-text="Sobre o Projeto"></h1>
+           <section class="Projeto_conteudo">
+            <h2 class="Projeto_conteudo_subtitulo">Motivações para o Projeto</h2>
+            <p class="Projeto_conteudo_paragrafo"> 
+                A motivação para este projeto nasceu da iniciativa dos integrantes <b class="negrito1">Gustavo Santana Marcolino</b> e <b class="negrito1">Igor Brandon Hasler</b>. 
+                A proposta foi desenvolver uma impressora 2D robusta e de maior precisão, aproveitando a experiência que a equipe adquiriu em projetos 
+                anteriores com princípios de funcionamento semelhantes. Sendo assim, o trabalho apresentado é a evolução de uma impressora 2D caseira, 
+                desenvolvida previamente pela equipe, cujo funcionamento é demonstrado no vídeo a seguir.
+            </p>
+        </section>
 
-            <section class="Video-section">
-                <h2 class="Projeto_conteudo_video">Vídeo da impressora 2D criada pelo integrante Igor</h2>
-                <div class="container-video">
+        <section class="Video-section">
+            <h2 class="Projeto_conteudo_video">Vídeo da impressora 2D criada pelo integrante Igor</h2>
+            <div class="container-video">
                 <video class="Projeto_video" controls width="100%" poster="#">
                     <source src="./assets/Video-impressora2d.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
                 </video>
-                <p class="Projeto_paragrafo_video" > Esta impressora 2D caseira transforma um desenho digital em um traçado físico.
-                     Para a movimentação precisa nos eixos X e Y, foram reaproveitados os mecanismos de dois drives de CD/DVD antigos. 
-                     Cada mecanismo, com seu motor de passo e trilhos, é responsável por um eixo. 
-                     <b class="negrito1">O sistema é controlado por um microcontrolador que lê as coordenadas do desenho e comanda os motores,
-                      guiando a caneta sobre o papel para replicar a imagem.</b> </p>
-                </div>
-            </section>
-            <section class="Explicação_projeto">
-                <H2 class="Explicação_projeto_titulo">Explicação do projeto </H2>
-                <p class="Projeto_explicação_conteudo">Capitalizando o sucesso e o aprendizado obtido com a construção da
-                    impressora 2D inicial, este novo projeto representa um salto em direção a uma ferramenta de fabricação digital mais eficaz
-                    . O objetivo agora é se possivel ultrapassar a barreira do desenho em duas dimensões e entrar no mundo da fabricação 
-                    aditiva, criando uma máquina híbrida capaz de operar tanto como uma plotadora 2D de alta precisão quanto como uma 
-                    impressora 3D. A principal inovação será a introdução de um terceiro eixo de movimento, o eixo Z, que nos permitirá não apenas 
-                    desenhar em uma superfície, mas também construir objetos camada por camada. 
-                  </p>
-                <p class="Projeto_explicação_conteudo">Para alcançar essa versatilidade, a nova impressora será construída sobre uma base 
-                    técnica mais robusta. Abandonaremos os mecanismos limitados dos drives de CD para adotar uma estrutura mais
-                     rígida e dimensionada, provavelmente utilizando perfis de alumínio ou peças impressas em 3D, garantindo a estabilidade 
-                     necessária para a impressão tridimensional. O movimento nos eixos X, Y e Z será controlado por motores de passo,
-                      mais potentes e precisos, guiados por correias e fusos trapezoidais. O coração da máquina será um sistema de "cabeça de 
-                      ferramenta"  modular e intercambiável: para a função 2D, acoplaremos um suporte para canetas ou marcadores; para 
-                      a função 3D, utilizaremos um conjunto extrusor com hotend, responsável por derreter e depositar filamento plástico (como o 
-                      PLA). Todo o sistema será gerenciado por uma placa controladora dedicada (Arduino), rodando um firmware especializado 
-                      como o Marlin, capaz de interpretar G-code 
-                      para ambos os modos de operação.</p>
-                <p class="Projeto_explicação_conteudo"> A principal vantagem é a versatilidade, transformando a máquina de um 
-                    hobby para uma ferramenta de criação de peças funcional, em escala relativa. A nova estrutura e os
-                     componentes de maior qualidade 
-                     resultarão em um aumento significativo de precisão, velocidade e confiabilidade em todas as operações. 
-                     Além do hardware, o projeto representa um avanço no aprendizado de software, exigindo o domínio de 
-                     programas de fatiamento (slicers) como o Cura ou PrusaSlicer para converter modelos 3D em instruções para a impressora. 
-                     Esse projeto também servirá como forma de aplicação prática de conceitos estudados na matéria de <b class="negrito1">Cálculo de várias
-                     variáveis</b>.</p>
-            </section>
+                <p class="Projeto_paragrafo_video"> 
+                    Esta impressora 2D caseira transforma um desenho digital em um traçado físico.
+                    Para a movimentação precisa nos eixos X e Y, foram reaproveitados os mecanismos de dois drives de CD/DVD antigos. 
+                    Cada mecanismo, com seu motor de passo e trilhos, é responsável por um eixo. 
+                    <b class="negrito1">O sistema é controlado por um microcontrolador que lê as coordenadas do desenho e comanda os motores,
+                    guiando a caneta sobre o papel para replicar a imagem.</b>
+                </p>
+            </div>
+        </section>
+
+        <section class="Explicação_projeto">
+            <h2 class="Explicação_projeto_titulo">Explicação do projeto </h2>
+            <p class="Projeto_explicação_conteudo">
+                Capitalizando o sucesso e o aprendizado obtido com a construção da impressora 2D inicial, este novo projeto representa um salto em direção a uma ferramenta de desenho digital mais robusta, precisa e versátil. O objetivo é superar as limitações da estrutura anterior, baseada em drives de CD, que restringiam a área de trabalho, a velocidade e os tipos de ferramentas que poderiam ser utilizadas.
+            </p>
+            <p class="Projeto_explicação_conteudo">
+                Para alcançar um desempenho superior, a nova impressora será construída sobre uma base técnica mais sólida. Abandonaremos os mecanismos limitados dos drives de CD para adotar uma <b class="negrito1">estrutura mais rígida e dimensionada</b>, utilizando perfis de alumínio, que garantem a estabilidade necessária para traçados precisos e rápidos. O movimento nos eixos X e Y será controlado por <b class="negrito1">motores de passo mais potentes e precisos</b> (como NEMA 17), guiados por correias e polias, aumentando significativamente a área útil de desenho e a confiabilidade do sistema.
+            </p>
+            <p class="Projeto_explicação_conteudo">
+                A principal inovação será a implementação de um sistema de <b class="negrito1">"cabeça de ferramenta" modular e intercambiável</b>. Para a função 2D, acoplaremos um suporte para canetas e marcadores de diferentes espessuras, e futuramente, vislumbramos a possibilidade de adaptar ferramentas leves, como uma faca de arrasto para corte de vinil ou um laser de baixa potência para gravação.
+            </p>
+            <p class="Projeto_explicação_conteudo">
+                Todo o sistema será gerenciado por uma <b class="negrito1">placa controladora dedicada</b> (como um Arduino com CNC Shield), rodando um firmware especializado em controle de movimento 2D (como o GRBL). Este firmware é capaz de interpretar <b class="negrito1">G-code</b> gerado a partir de softwares de desenho vetorial (como o Inkscape), traduzindo as coordenadas do desenho em movimentos precisos dos motores.
+            </p>
+            <p class="Projeto_explicação_conteudo">
+                A principal vantagem é a <b class="negrito1">versatilidade</b>, transformando a máquina de um experimento de hobby em uma ferramenta funcional para prototipagem de desenhos técnicos, arte e pequenos trabalhos de precisão. A nova estrutura e os componentes de maior qualidade resultarão em um aumento significativo de <b class="negrito1">precisão, velocidade e confiabilidade</b> em todas as operações. Além do hardware, o projeto representa um avanço no aprendizado de software, exigindo o domínio de fluxos de trabalho para converter desenhos vetoriais em G-code. Este projeto também servirá como forma de aplicação prática de conceitos estudados na matéria de <b class="negrito1">Cálculo de Várias Variáveis</b>, especialmente no que tange à interpolação de curvas e trajetórias no plano XY.
+            </p>
+        </section>
             <section class="ODS">
                 <H2 class="ODS_titulo">Sobre a ODS</H2>
                     <div class="ODS_conteudo">
@@ -126,5 +122,6 @@
     <footer class="rodape">
     </footer>
     <script src="./js/frontend/pesquisa.js"></script>
+    <script src="./js/frontend/escrita.js"></script>
 </body>
 </html>

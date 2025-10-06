@@ -216,7 +216,7 @@ body {
 }
 
 .conteudo_principal_wrapper {
- width: 100%;
+ width: 80%;
  display: flex;
  flex-direction: column-reverse;
  align-items: center;
@@ -501,8 +501,8 @@ body {
  max-width: 200px;
  padding: 0.75rem 0;
  border-radius: 1.5rem;
- background-color: var(--cor-destaque); /* Alterado */
- color: var(--cor-fundo); /* Alterado para contraste */
+ background-color: var(--cor-destaque); 
+ color: var(--cor-fundo); 
  text-decoration: none;
  font-family: var(--fonte-titulo);
  font-size: 1rem;
@@ -513,7 +513,32 @@ body {
 .apresentacao__links__link:hover { transform: scale(1.08); }
 
 /* ==========================================================================
- 7. MEDIA QUERIES 
+   7. ANIMAÇÃO 
+   ========================================================================== */
+
+.teste_conteudo__conteudo p {
+  min-height: 50px; 
+}
+
+.titulo-animado::after ,
+.digitando::after {
+  content: '|';
+  margin-left: 8px;
+  color: var(--cor-destaque);
+  opacity: 2;
+  animation: pisca 0.8s infinite;
+}
+
+@keyframes pisca {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+/* ==========================================================================
+ 8. MEDIA QUERIES 
  ========================================================================== */
 
 @media (min-width: 769px) {
