@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ...document.querySelectorAll('.teste_conteudo__conteudo p')
     ];
 
-    const velocidade = 70; 
+    const velocidade = 40; 
 
     function digitar(elemento, callback) {
         const texto = elemento.getAttribute('data-text');

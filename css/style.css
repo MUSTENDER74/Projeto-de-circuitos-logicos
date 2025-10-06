@@ -537,8 +537,50 @@ body {
     opacity: 0;
   }
 }
+
 /* ==========================================================================
- 8. MEDIA QUERIES 
+   8. ANIMAÇÃO DE TRANSIÇÃO DE PÁGINA (ONDA)
+   ========================================================================== */
+.onda-transicao {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #FFFFFF; 
+  border: solid #000000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+  
+
+  transform: translateY(-100%);
+  
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* UMA ÚNICA CLASSE para ativar a animação completa */
+.transicao-ativa {
+  /* Duração total: 1.6s (0.8s para entrar + 0.8s para sair) */
+  animation: imprimir-continuo 1.6s ease-in-out forwards;
+}
+
+/* UM ÚNICO @keyframes para o movimento completo */
+@keyframes imprimir-continuo {
+  /* No início, a folha está acima da tela */
+  0% {
+    transform: translateY(-100%);
+  }
+  /* Na metade do tempo, ela cobre a tela (ponto da troca) */
+  50% {
+    transform: translateY(0%);
+  }
+  /* No final, ela já saiu por baixo da tela */
+  100% {
+    transform: translateY(100%);
+  }
+}
+/* ==========================================================================
+  MEDIA QUERIES 
  ========================================================================== */
 
 @media (min-width: 769px) {

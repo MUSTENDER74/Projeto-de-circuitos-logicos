@@ -1,79 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Site cicuitos logicos</title>
+    <title>Site Circuitos Lógicos</title>
     <link rel="stylesheet" href="./css/style.css" />
-  </head>
+</head>
 
-  <body>
+<body data-barba="wrapper">
+    <div class="onda-transicao"></div>
+
     <header class="cabeçalho">
+        <div class="container" title="Menu de Navegação">
+            <input type="checkbox" id="menu" class="container__botao"/>
+            <label for="menu">
+                <span class="cabeçalho__menu-hamburguer container__imagem"></span>
+            </label>
+            <ul class="lista-menu">
+                <li class="lista-menu__titulo">Navegação</li>
+                <li class="lista-menu__item">
+                    <a href="index.html" class="botao_inicio"> Início </a>
+                </li>
+                <li class="lista-menu__item">
+                    <a href="sobre-projeto.html" class="botao_projeto"> Projeto </a>
+                </li>
+                <li class="lista-menu__item">
+                    <a href="Criaçao.html" class="botao_desenvolvedores"> Criação do projeto </a>
+                </li>
+                <li class="lista-menu__item">
+                    <a href="desenvolvedores.html" class="botao_desenvolvedores"> Desenvolvedores </a>
+                </li>
+            </ul>
+        </div>
+        <form class="form-pesquisa" id="formPesquisa">
+            <input type="search" class="input-pesquisa" name="q" placeholder="Barra de pesquisa..." aria-label="Campo de busca" />
+            <button type="submit" class="botao-pesquisa" aria-label="Buscar">
+                <img src="./assets/Lupa.svg" alt="Imagem de uma lupa">
+            </button>
+        </form>
+    </header>
 
-    <div class="container" title="Menu de Navegação">
-        <input type="checkbox" id="menu" class="container__botao"/>
-        <label for="menu">
-            <span class="cabeçalho__menu-hamburguer container__imagem"></span>
-        </label>
-        <ul class="lista-menu">
-            <li class="lista-menu__titulo">Navegação</li>
-            <li class="lista-menu__item">
-                <a href="index.html" class="botao_inicio"> Início </a>
-            </li>
-            <li class="lista-menu__item">
-                <a href="sobre-projeto.html" class="botao_projeto"> Projeto </a>
-            </li>
-             <li class="lista-menu__item">
-                <a href="Criaçao.html" class="botao_desenvolvedores">
-                    Criação do projeto 
-                </a>
-            </li>
-            <li class="lista-menu__item">
-                <a href="desenvolvedores.html" class="botao_desenvolvedores">
-                    Desenvolvedores
-                </a>
-            </li>
-        </ul>
-    </div>
-
-    <form class="form-pesquisa" id="formPesquisa">
-        <input type="search" class="input-pesquisa" name="q" placeholder="Barra de pesquisa..." aria-label="Campo de busca" />
-        <button type="submit" class="botao-pesquisa" aria-label="Buscar">
-            <img src="./assets/Lupa.svg" alt="Imagem de uma lupa">
-        </button>
-    </form>
-
-</header>
-
-  <main class="teste_conteudo">
-    <h1 class="teste_conteudo__conteudo__titulo" 
-        id="titulo-animado" 
-        data-text="Projeto Impressora 2D">
+    <main class="teste_conteudo" data-barba="container" data-barba-namespace="home">
+        <h1 class="teste_conteudo__conteudo__titulo" 
+            id="titulo-animado" 
+            data-text="Projeto Impressora 2D">
         </h1>
 
-    <div class="conteudo_principal_wrapper">
-        <section class="teste_conteudo__conteudo">
-            <p data-text="Bem-vindo ao nosso projeto de circuitos elétricos. Navegue por este site para explorar a jornada de desenvolvimento da nossa Impressora 2D Robusta.">
-                </p>
-
-            <p data-text="Este trabalho une conceitos de mecânica, eletrônica e programação para transformar ideias digitais em realidade física, superando os limites de um protótipo inicial para criar uma ferramenta mais precisa e versátil.">
-                </p>
-
-            <p data-text="O projeto representa nosso empenho em aplicar a teoria em um equipamento funcional, marcando um passo importante em nossa formação como futuros inovadores.">
-                </p>
-        </section>
-        
-        <img
-            class="logo_Site"
-            src="./assets/Logo.png"
-            alt="Imagem do nome do site"
-        />
-    </div>
-</main>
+        <div class="conteudo_principal_wrapper">
+            <section class="teste_conteudo__conteudo">
+                <p data-text="Bem-vindo ao nosso projeto de circuitos elétricos. Navegue por este site para explorar a jornada de desenvolvimento da nossa Impressora 2D Robusta."></p>
+                <p data-text="Este trabalho une conceitos de mecânica, eletrônica e programação para transformar ideias digitais em realidade física, superando os limites de um protótipo inicial para criar uma ferramenta mais precisa e versátil."></p>
+                <p data-text="O projeto representa nosso empenho em aplicar a teoria em um equipamento funcional, marcando um passo importante em nossa formação como futuros inovadores."></p>
+            </section>
+            <img class="logo_Site" src="./assets/Logo.png" alt="Imagem do nome do site" />
+        </div>
+    </main>
 
     <footer class="rodape">
     </footer>
+
+    <script src="https://unpkg.com/@barba/core">
+    </script> <script src="./js/transicoes.js"></script> 
     <script src="./js/frontend/pesquisa.js"></script>
-    <script src="./js/frontend/escrita.js"></script>
-  </body>
+    <script src="./js/frontend/animacao-pagina.js"></script>
+    </body>
 </html>
