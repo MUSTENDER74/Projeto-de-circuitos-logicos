@@ -8,7 +8,7 @@
     
 </head>
 <body>
-     <header class="cabeçalho">
+      <header class="cabeçalho">
 
     <div class="container" title="Menu de Navegação">
         <input type="checkbox" id="menu" class="container__botao"/>
@@ -21,11 +21,11 @@
                 <a href="index.html" class="botao_inicio"> Início </a>
             </li>
             <li class="lista-menu__item">
-                <a href="sobre-projeto.html" class="botao_projeto"> Projeto </a>
+                <a href="sobre-projeto.html" class="botao_projeto"> Idéia do projeto </a>
             </li>
              <li class="lista-menu__item">
                 <a href="Criaçao.html" class="botao_desenvolvedores">
-                    Criação do projeto 
+                   O projeto
                 </a>
             </li>
             <li class="lista-menu__item">
@@ -44,19 +44,22 @@
     </form>
 
 </header>
+
 <main data-barba="container" data-barba-namespace="desenvolvedores">
- <h1 class="titulo_desenvolvedores" >Desenvolvedores do projeto</h1>
+    <h1 class="titulo_desenvolvedores">Desenvolvedores do projeto</h1>
     
-    <div class="slider">
-        <div class="slides">
-            <input type="radio" name="radio-btn" id="radio1"> 
-            <input type="radio" name="radio-btn" id="radio2">
-            <input type="radio" name="radio-btn" id="radio3">
-            <input type="radio" name="radio-btn" id="radio4">
-            <input type="radio" name="radio-btn" id="radio5">
-            <input type="radio" name="radio-btn" id="radio6">
-            
-            <div class="slide first">
+    <div class="slider-container">
+        
+        <div class="slider">
+            <div class="slides">
+                <input type="radio" name="radio-btn" id="radio1" checked> 
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+                <input type="radio" name="radio-btn" id="radio5">
+                <input type="radio" name="radio-btn" id="radio6">
+                
+              <div class="slide first">
                <div class="nome-desenvolvedor"> 
                 <h3>Igor Brandon Hasler</h3>
                 <p>RA:202409584</p>
@@ -103,33 +106,22 @@
                 </div>
                 <img class="slide-img" src="./assets/Foto-Luiz.png" alt="Luiz Henrique Valentim Souto">
             </div>
-            
-            <div class="navigation-auto">
-                <div class="auto-btn1"></div>
-                <div class="auto-btn2"></div>
-                <div class="auto-btn3"></div>
-                <div class="auto-btn4"></div>
-                <div class="auto-btn5"></div>
-                <div class="auto-btn6"></div>
-            </div>    
-        </div>
 
-        <div class="manual-navigation">
-            <label for="radio1" class="manual-btn"></label>
-            <label for="radio2" class="manual-btn"></label>
-            <label for="radio3" class="manual-btn"></label>
-            <label for="radio4" class="manual-btn"></label>
-            <label for="radio5" class="manual-btn"></label>
-            <label for="radio6" class="manual-btn"></label>
-        </div>
+                <div class="navigation-auto">
+                    </div>    
+            </div>
+        <button class="slider-arrow slider-arrow--left" id="prev-btn">&#10094;</button>
+        <button class="slider-arrow slider-arrow--right" id="next-btn">&#10095;</button>
+        
     </div>
 </main>
 
-     <footer class="rodape">
+ <footer class="rodape">
     </footer>
     <script src="./js/frontend/pesquisa.js"></script>
     <script src="./js/frontend/slider.js"></script>
     <script src="./js/frontend/animacao-pagina.js"></script>
 </body>
 </html>
+
 

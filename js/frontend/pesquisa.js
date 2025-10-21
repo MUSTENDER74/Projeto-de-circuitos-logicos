@@ -1,61 +1,120 @@
-const formPesquisa = document.getElementById('formPesquisa');
-const inputPesquisa = formPesquisa.querySelector('.input-pesquisa');
+// Usamos uma função anônima para encapsular nosso código e proteger o escopo global.
+(function() {
+    const formPesquisa = document.getElementById('formPesquisa');
+    if (!formPesquisa) return; // Se o formulário não existir, para a execução.
 
-const termosDeBusca = {
-    'index.html': [
-        'inicio', 'início', 'home', 'pagina inicial', 'página inicial', 'aba inicio', 'botão inicio',
-        'principal', 'tela inicial', 'menu principal', 'começo', 'voltar', 'painel', 'dashboard',
-        'capa', 'voltar ao inicio', 'ir para home', 'recomeçar', 'começar', 'ir para o começo',
-        'retornar', 'página principal', 'portal', 'entrada', 'home page', 'vista geral', 'resumo',
-        'central', 'ponto de partida', 'reiniciar', 'guia principal', 'acesso rápido', 'área de trabalho',
-        'plataforma', 'primeira página', 'front page', 'tela de boas-vindas', 'menu inicial', 'recomeço',
-        'navegação', 'sumário', 'painel principal', 'página de aterrissagem', 'tela principal', 'desktop',
-        'ponto central', 'hub', 'índice', 'menu de navegação', 'voltar ao começo', 'raiz', 'ambiente inicial'
-    ],
+    const inputPesquisa = formPesquisa.querySelector('.input-pesquisa');
 
-    'sobre-projeto.html': [
-        'projeto', 'sobre', 'sobre o projeto', 'informações', 'info',
-        'detalhes', 'explicação', 'o que é', 'como funciona', 'objetivo', 'finalidade', 'escopo',
-        'missão', 'visão', 'documentação', 'sobre nós', 'a respeito do projeto',
-        'detalhes do projeto', 'qual o objetivo', 'para que serve', 'objetivo do projeto', 'propósito',
-        'conceito', 'fundamentos', 'iniciativa', 'proposta', 'o que fazemos', 'como surgiu', 'história',
-        'guia', 'manual', 'apresentação', 'contexto', 'declaração', 'valores', 'metodologia',
-        'consiste', 'descrição', 'o porquê', 'justificativa', 'sobre a iniciativa', 'premissa',
-        'briefing', 'o porquê do projeto', 'nosso manifesto', 'entenda a ideia', 'base do projeto',
-        'sumário executivo', 'concepção', 'sobre a ferramenta', 'nossa filosofia'
-    ],
-    'desenvolvedores.html': [
-        'desenvolvedores', 'devs', 'quem fez', 'criadores', 'time',
-        'equipe', 'créditos', 'autores', 'programadores', 'quem desenvolveu', 'equipe de desenvolvimento',
-        'o time', 'membros', 'realizadores', 'nossa equipe', 'falar com os devs', 'contatar a equipe',
-        'engenheiros de software', 'os responsáveis', 'ficha técnica', 'responsáveis', 'construtores',
-        'idealizadores', 'colaboradores', 'participantes', 'staff', 'a equipe por trás', 'mentes por trás',
-        'quem somos', 'o squad', 'grupo', 'contribuidores', 'produtores', 'autoria', 'expediente',
-        'quem produziu', 'realização', 'equipe técnica', 'cérebros', 'nosso time', 'os criadores',
-        'mentes criativas', 'engenheiros', 'a turma', 'quem está por trás', 'contato da equipe',
-        'desenvolvimento', 'a companhia', 'os arquitetos', 'painel de créditos', 'equipe de criação'
-    ],
-};
+    // Listas de palavras-chave expandidas e corrigidas
+    const termosDeBusca = {
+        'index.html': [
+            // Termos Principais
+            'inicio', 'início', 'home', 'principal', 'começo', 'começar', 'iniciar', 'voltar', 'retornar', 'recomeçar',
+            'página inicial', 'pagina inicial', 'tela inicial', 'menu principal', 'capa', 'portal', 'entrada',
+            // Sinônimos e Conceitos
+            'painel', 'dashboard', 'resumo', 'central', 'hub', 'índice', 'raiz', 'sumário', 'visão geral', 'vista geral',
+            'ponto de partida', 'guia principal', 'acesso rápido', 'área de trabalho', 'plataforma', 'front page',
+            'tela de boas-vindas', 'menu inicial', 'navegação', 'página de aterrissagem', 'tela principal', 'desktop',
+            'ambiente inicial', 'apresentação', 'geral', 'tudo', 'conteúdo', 'site todo', 'mapa do site',
+            // Ações do Usuário
+            'ir para home', 'voltar ao inicio', 'voltar para o começo', 'ir para o começo', 'quero voltar',
+            // Erros Comuns
+            'inico', 'inicoo', 'home page', 'comecar', 'volta', 'inicair', 'principal', 'hme', 'incio',
+            // Termos em Inglês
+            'start', 'main', 'main page', 'beginning', 'front', 'cover', 'go back', 'reset', 'overview'
+        ],
+        'sobre-projeto.html': [
+            // Termos Principais
+            'projeto', 'sobre', 'sobre o projeto', 'ideia', 'idéia do projeto', 'informações', 'info', 'detalhes',
+            'explicação', 'objetivo', 'propósito', 'finalidade', 'escopo', 'proposta', 'conceito', 'documentação',
+            // Sinônimos e Conceitos
+            'o que é', 'como funciona', 'para que serve', 'missão', 'visão', 'valores', 'fundamentos', 'iniciativa',
+            'história', 'contexto', 'metodologia', 'descrição', 'justificativa', 'premissa', 'briefing', 'concepção',
+            'filosofia', 'sumário executivo', 'a respeito do projeto', 'base do projeto', 'entenda a ideia',
+            'sobre a ferramenta', 'declaração', 'manifesto', 'guia', 'manual', 'apresentação', 'sobre a iniciativa',
+            'ods', 'objetivos de desenvolvimento sustentável', 'agenda 2030', 'ods 9', 'inovação', 'infraestrutura',
+            // Ações do Usuário
+            'qual o objetivo', 'o porquê do projeto', 'quero saber mais', 'mais detalhes', 'ler sobre',
+            // Erros Comuns
+            'pojeto', 'sobr', 'detalhe', 'informacoes', 'esplicacao', 'objetvo', 'proposito', 'ideia',
+            // Termos em Inglês
+            'project', 'about', 'about the project', 'information', 'details', 'explanation', 'goal', 'purpose', 'scope'
+        ],
+        'Criaçao.html': [
+            // Termos Principais
+            'criação', 'criacao', 'o projeto', 'desenvolvimento', 'construção', 'fases', 'etapas', 'processo',
+            'como foi feito', 'montagem', 'fabricação', 'implementação', 'execução', 'andamento',
+            // Sinônimos e Conceitos
+            'jornada', 'passo a passo', 'making of', 'bastidores', 'pesquisa', 'planejamento', 'prototipagem',
+            'programação', 'calibragem', 'hardware', 'software', 'componentes', 'peças', 'eletrônica', 'mecânica',
+            'detalhes técnicos', 'tecnologia', 'arduino', 'grbl', 'cnc shield', 'motores de passo', 'nema 17',
+            'estrutura', 'perfis de alumínio', 'g-code', 'firmware', 'calibração',
+            // Ações do Usuário
+            'ver o andamento', 'etapas do projeto', 'como construíram', 'making of do projeto', 'ver a criação',
+            // Erros Comuns
+            'criacão', 'criacão', 'desenvolvimiento', 'procesos', 'faze', 'etapa', 'hardwere', 'softwere',
+            // Termos em Inglês
+            'creation', 'development', 'making of', 'the project', 'how it was made', 'build process', 'steps', 'phases'
+        ],
+        'desenvolvedores.html': [
+            // Termos Principais
+            'desenvolvedores', 'devs', 'criadores', 'autores', 'time', 'equipe', 'créditos', 'programadores',
+            'quem fez', 'quem desenvolveu', 'equipe de desenvolvimento', 'membros', 'grupo', 'contato',
+            // Sinônimos e Conceitos
+            'realizadores', 'construtores', 'idealizadores', 'colaboradores', 'participantes', 'staff',
+            'mentes por trás', 'quem somos', 'squad', 'contribuidores', 'produtores', 'autoria', 'expediente',
+ 'realização', 'equipe técnica', 'mentes criativas', 'engenheiros', 'os responsáveis', 'ficha técnica',
+            'painel de créditos', 'equipe de criação', 'os arquitetos do projeto',
+            // Ações do Usuário
+            'falar com os devs', 'contatar a equipe', 'quem está por trás', 'quem são os criadores',
+            // Erros Comuns
+            'desenvoledores', 'desenvolvedors', 'dev', 'criador', 'autores', 'time', 'equpe', 'creditos',
+            // Termos em Inglês
+            'developers', 'devs', 'creators', 'authors', 'team', 'credits', 'programmers', 'who made this', 'the team'
+        ]
+    };
 
-function buscarPagina(termo) {
-    const termoFormatado = termo.trim().toLowerCase();
-    let destinoEncontrado = null;
+    /**
+     * @param {string} termo O termo digitado pelo usuário.
+     */
+    function buscarPagina(termo) {
+        const termoFormatado = termo.trim().toLowerCase();
+        let destinoEncontrado = null;
 
-    for (const url in termosDeBusca) {
-        if (termosDeBusca[url].includes(termoFormatado)) {
-            destinoEncontrado = url;
-            break;
+        if (termoFormatado === '') {
+            return; // Não faz nada se a busca for vazia
+        }
+
+        for (const url in termosDeBusca) {
+            if (termosDeBusca[url].includes(termoFormatado)) {
+                destinoEncontrado = url;
+                break;
+            }
+        }
+
+        if (destinoEncontrado) {
+            // Se a página atual já for o destino, não faz nada
+            if (window.location.pathname.endsWith(destinoEncontrado)) {
+                return;
+            }
+            window.location.href = destinoEncontrado;
+        } else {
+            // Feedback visual de erro
+            inputPesquisa.value = ''; // Limpa o campo
+            inputPesquisa.placeholder = 'Nada encontrado...';
+            formPesquisa.classList.add('erro-pesquisa');
+
+            // Remove a classe de erro após a animação terminar
+            setTimeout(() => {
+                formPesquisa.classList.remove('erro-pesquisa');
+                inputPesquisa.placeholder = 'Barra de pesquisa...';
+            }, 1000);
         }
     }
 
-    if (destinoEncontrado) {
-        window.location.href = destinoEncontrado;
-    } else {
-        alert("Não encontramos resultados para: " + termo);
-    }
-}
+    formPesquisa.addEventListener('submit', function(event) {
+        event.preventDefault();
+        buscarPagina(inputPesquisa.value);
+    });
 
-formPesquisa.addEventListener('submit', function(event) {
-    event.preventDefault();
-    buscarPagina(inputPesquisa.value);
-});
+})();
