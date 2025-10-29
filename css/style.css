@@ -382,7 +382,7 @@ body {
  .ODS_titulo  {
   font-family: var(--fonte-titulo);
   font-weight: 100;
-  font-size: var(--tamanho-subtitulo);
+  font-size: var(--tamnho-titulo);
   color: var(--cor-texto-principal); 
   margin: 1rem;
   margin-left: 4%;
@@ -435,6 +435,15 @@ body {
   border: 0.2rem solid #000000; 
  }
 
+ .Projeto_img {
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+  margin-right: 2%;
+  margin-left: 2%;
+  border: 0.2rem solid #000000; 
+ }
+
  .Projeto_video:hover {
     transform: scale(1.10);
   }
@@ -473,9 +482,6 @@ body {
   margin-bottom:4% ;
  }
 
- /* ==========================================================================
- .PArte exclusiva Criação
- ========================================================================== */
 
 /* ==========================================================================
  6. RODAPÉ (FOOTER)
@@ -685,6 +691,11 @@ body {
   .Projeto_conteudo_video {
   margin-left: 22%;
  }
+
+  .Projeto_img {
+  width: 50%;
+ }
+
 /* PARTE EXCLUSIVA DE DESENVOLVEDORES*/
 
  .desenvolvedor-card { flex-direction: row; text-align: left; }
